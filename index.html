@@ -268,11 +268,49 @@
   <div class="wrap">
     <h2 class="l-ja">スクリーンショット</h2>
     <h2 class="l-en">Screenshots</h2>
-    <!-- 採用が決まったら assets/images/ へ <番号>_<名前>.png で置き、build_thumbs.py を実行して
-         下の grid に <figure> を足す。準備中の段落は消す。 -->
-    <p class="lead l-ja">準備中です。必要でしたら、特定の場面を撮影してお送りします。</p>
-    <p class="lead l-en">Coming soon. Happy to capture specific scenes on request.</p>
-    <div class="grid" id="shots"></div>
+    <!-- いまの9枚は Steam ストアページに載せたものと同じ場面の 800×450 JPEG。
+         原寸（1920×1080 PNG）が揃ったら同じ番号・名前の .png に差し替え、href と src の拡張子を直し、
+         下の説明文の「800×450」と「原寸版をお送りします」を消す。 -->
+    <p class="lead l-ja">Steam ストアページと同じ9枚です。画面の UI は英語表示です。<strong>いま置いているのは 800×450 の JPEG です。</strong>記事に大きく載せる場合は、原寸（1920×1080）をお送りしますのでご連絡ください。</p>
+    <p class="lead l-en">The same nine shots as on the Steam page, with the UI in English. <strong>These are 800×450 JPEGs for now</strong> — email us if you need full-size 1920×1080 originals.</p>
+    <div class="grid" id="shots">
+      <figure>
+        <a href="assets/images/01_rooftop.jpg"><img src="assets/thumbs/01_rooftop.webp" alt="Teeing off from a rooftop" loading="lazy"></a>
+        <figcaption><span class="l-ja">ビルの屋上から打つ</span><span class="l-en">Teeing off from a rooftop</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/02_island_eight_players.jpg"><img src="assets/thumbs/02_island_eight_players.webp" alt="Eight balls in the air, aimed at an island green" loading="lazy"></a>
+        <figcaption><span class="l-ja">海の向こうの島へ。8人が同時に打った直後</span><span class="l-en">Eight balls in the air, aimed at an island green</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/03_side_gravity.jpg"><img src="assets/thumbs/03_side_gravity.webp" alt="Side Gravity tips the whole city sideways" loading="lazy"></a>
+        <figcaption><span class="l-ja">横向き重力で、街ごと傾いて見える一打</span><span class="l-en">Side Gravity tips the whole city sideways</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/04_super_bounce.jpg"><img src="assets/thumbs/04_super_bounce.webp" alt="Super Bounce past the pyramids and the sphinx" loading="lazy"></a>
+        <figcaption><span class="l-ja">スーパーボールで跳ねる。ピラミッドとスフィンクスの区画</span><span class="l-en">Super Bounce past the pyramids and the sphinx</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/05_big_ball.jpg"><img src="assets/thumbs/05_big_ball.webp" alt="A Big Ball shot by the sea" loading="lazy"></a>
+        <figcaption><span class="l-ja">BIGボールで打った海辺の一打</span><span class="l-en">A Big Ball shot by the sea</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/06_amusement_park.jpg"><img src="assets/thumbs/06_amusement_park.webp" alt="Threading the Ferris wheel at the amusement park" loading="lazy"></a>
+        <figcaption><span class="l-ja">遊園地の観覧車を抜ける</span><span class="l-en">Threading the Ferris wheel at the amusement park</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/07_night_harbor.jpg"><img src="assets/thumbs/07_night_harbor.webp" alt="The harbour at night" loading="lazy"></a>
+        <figcaption><span class="l-ja">夜の港</span><span class="l-en">The harbour at night</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/08_storm_lightning.jpg"><img src="assets/thumbs/08_storm_lightning.webp" alt="A stormy night, holding a lightning strike" loading="lazy"></a>
+        <figcaption><span class="l-ja">嵐の夜。雷のアイテムを持って</span><span class="l-en">A stormy night, holding a lightning strike</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/09_beach_putt.jpg"><img src="assets/thumbs/09_beach_putt.webp" alt="Putting out on the beach" loading="lazy"></a>
+        <figcaption><span class="l-ja">浜辺のグリーンでパット</span><span class="l-en">Putting out on the beach</span></figcaption>
+      </figure>
+    </div>
 
     <h2 style="margin-top:44px;" class="l-ja">GIF・ループ動画</h2>
     <h2 style="margin-top:44px;" class="l-en">GIFs &amp; loops</h2>
@@ -372,13 +410,13 @@
     <h2 class="l-ja">ダウンロード</h2>
     <h2 class="l-en">Downloads</h2>
     <div class="buttons">
-      <a class="btn" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（65MB）</span><span class="l-en">Full press kit, zip (65 MB)</span></a>
+      <a class="btn" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（67MB）</span><span class="l-en">Full press kit, zip (67 MB)</span></a>
       <a class="btn ghost" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4" download><span class="l-ja">トレーラー mp4（29MB）</span><span class="l-en">Trailer mp4 (29 MB)</span></a>
       <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
       <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
     </div>
-    <p class="lead l-ja" style="margin-top:14px;">zip には GIF とループ動画（mp4、無音）各9点、ロゴとキーアートを含むブランド素材10点、ファクトシート（日英）が入っています。トレーラーは別にダウンロードしてください。</p>
-    <p class="lead l-en" style="margin-top:14px;">The zip contains 9 GIFs and 9 silent loops (mp4), 10 branding files including the logo and key art, and both fact sheets. The trailer is a separate download.</p>
+    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット9枚、GIF とループ動画（mp4、無音）各9点、ロゴとキーアートを含むブランド素材10点、ファクトシート（日英）が入っています。トレーラーは別にダウンロードしてください。</p>
+    <p class="lead l-en" style="margin-top:14px;">The zip contains 9 screenshots, 9 GIFs and 9 silent loops (mp4), 10 branding files including the logo and key art, and both fact sheets. The trailer is a separate download.</p>
 
     <div class="l-ja">
       <h3>素材の利用について</h3>

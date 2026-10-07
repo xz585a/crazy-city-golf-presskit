@@ -56,19 +56,20 @@
 
 ## 現在の収録物
 
+- スクリーンショット **9枚**（**800×450 の JPEG。原寸ではない**。下記「スクリーンショットの差し替え待ち」）
 - GIF **9点**（616×346）と、同じ場面のループ動画（mp4、無音）9点
   - ページ上は mp4 を再生し、GIF はダウンロード用。GIF を9本並べるとページが50MB近くになるため
   - 画面に入ったものだけ再生し、外れたら止める（`index.html` 末尾のスクリプト）
 - ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
 - ファクトシート 日英
 - トレーラー（約100秒、29MB に再圧縮した mp4）
-- 一括ダウンロード用 zip（65MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（67MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
 
 | 何 | 備考 |
 | --- | --- |
-| スクリーンショット | ゲーム本体側 `marketing/素材/20261002_Steamスクリーンショット/` で選定中。ページには「準備中」と出している |
+| スクリーンショットの原寸 | 下記「スクリーンショットの差し替え待ち」 |
 | 開発者からのひとこと | `index.html` と `fact_sheet_*.txt` の《　》 |
 | トレーラーの YouTube 版 | 下記「トレーラー」 |
 | 発売時期・価格 | いまは「未定」 |
@@ -78,11 +79,34 @@
 | ここ | ゲーム本体側の素材ID・元のファイル |
 | --- | --- |
 | `assets/gifs/01_meteor_start.gif` 〜 `09_awards.gif` | GIF 一式 `01_同時スタートに隕石_none_16x9_v01.gif` 〜 `09_表彰式_none_16x9_v01.gif`（番号は同じ） |
+| `assets/images/01_rooftop.jpg` 〜 `09_beach_putt.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450）で保存したもの。対応は下表 |
 | `assets/gifs/loop_*.mp4` | 上の GIF を ffmpeg で mp4 にしたもの（下記） |
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
 | `assets/branding/app_icon.svg` | `20261002_アプリアイコン/app_icon.svg` |
 | `assets/video/CrazyCityGolf_Trailer.mp4` | `20261001_steam_promo_90s` の `steam_promo_en_16x9_v20.mp4` |
+
+| ここ | 受け取ったファイル |
+| --- | --- |
+| `01_rooftop.jpg` | `ss_653b8b33142e7dd52b57488bd6c43cda6dffa4bc.800x600.jpg` |
+| `02_island_eight_players.jpg` | `ss_477cb59c4ee11a6f3001fb31d34a354a8e27d13f.800x600.jpg` |
+| `03_side_gravity.jpg` | `ss_be50ce693a1a015c7492f73fb6d7b2a4fc2501bf.800x600.jpg` |
+| `04_super_bounce.jpg` | `ss_db9d2150570e070ac721e492a6b14355d67875aa.800x600.jpg` |
+| `05_big_ball.jpg` | `ss_020467b212578fa9e1f987241e6de8b3e88f96e1.800x600.jpg` |
+| `06_amusement_park.jpg` | `ss_e978d1b53e114c333fc22ad49d9a05d6ad4560a2.800x600.jpg` |
+| `07_night_harbor.jpg` | `ss_a248e2dd70d22e235b64c7694183e3567d4cd7cb.800x600.jpg` |
+| `08_storm_lightning.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.800x600.jpg` |
+| `09_beach_putt.jpg` | `ss_83be64ced3885aaf984fd6e9b1951a0676eda431.800x600.jpg` |
+
+### スクリーンショットの差し替え待ち
+
+いまの9枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
+編集部は記事用に切り出して拡大するので、原寸（1920×1080 の PNG。Steamworks へ上げた元ファイル）が見つかったら差し替える。
+
+1. `assets/images/` へ同じ番号・名前の `.png` で置き、`.jpg` を消す
+2. `python build_thumbs.py`
+3. `index.html` のスクリーンショットの `href` と `src` を `.png` に直し、説明文の「800×450」と原寸を送る旨の文を消す
+4. zip を作り直して Releases へ上げる
 
 GIF から mp4 を作り直すとき。
 

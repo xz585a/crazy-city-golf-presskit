@@ -36,8 +36,10 @@ def main() -> None:
         out = os.path.join(DST, stem + ".webp")
 
         image = Image.open(path).convert("RGB")
-        height = round(image.height * WIDTH / image.width)
-        image.resize((WIDTH, height), Image.LANCZOS).save(out, "WEBP", quality=QUALITY, method=6)
+        # 原寸が表示幅より小さいときは拡大しない（粗くなるだけで容量が増える）
+        width = min(WIDTH, image.width)
+        height = round(image.height * width / image.width)
+        image.resize((width, height), Image.LANCZOS).save(out, "WEBP", quality=QUALITY, method=6)
         print("%6.0f KB -> %5.0f KB  %s" % (
             os.path.getsize(path) / 1024, os.path.getsize(out) / 1024, stem + ".webp"))
 
