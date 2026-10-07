@@ -11,6 +11,53 @@
 何を収録するか・いつ直すかの判断は、ゲーム本体側の `marketing/手順/プレスリリース/プレスキット.md` を正とする。
 ここには、このリポジトリの運用だけを書く。
 
+## 状態（2026-10-08）
+
+- **内容は一旦完成。未公開。**このフォルダ（`C:\Godot\crazy-city-golf-presskit`）にだけあり、GitHub にはまだ無い
+- 公開するときは下の「公開の手順（初回）」を上から行う
+- 残っているもの：開発者のひとこと（《　》）、スクリーンショットの原寸、トレーラーの YouTube 版、発売時期・価格
+
+**GitHub へ上げるまで、ここが唯一のコピーである。**PC の移行や掃除の前に公開するか、別の場所へ複製する。
+`assets/video/` と `downloads/` は Git に入らないが、どちらも下の手順で作り直せる。
+
+## 編集のしかた
+
+**`index.html` を直接編集する。**ページを生成する仕組みは無い。手元で見るときはこのフォルダで
+
+```bash
+python -m http.server 8765
+```
+
+を実行し、<http://localhost:8765/> を開く（トレーラーも手元のファイルで再生される）。
+
+### 同じ内容が書いてある場所
+
+文章を直すときは、次の**4か所を必ずそろえる。**記者はページとファクトシートのどちらを引用するか分からない。
+
+| 内容 | `index.html` | ファクトシート |
+| --- | --- | --- |
+| 概要・特徴・製品情報・開発者 | `<!-- 日本語 -->` と `<!-- English -->` の2ブロック（`#about`） | `fact_sheet_ja.txt` / `fact_sheet_en.txt` |
+| 連絡先 | `#contact` の日英2つの表 | 両ファイルの末尾 |
+| 一行紹介 | `<header>` の `tagline` 2つ | （なし） |
+| 素材の利用許諾 | `#downloads` の日英 | 両ファイル |
+
+ゲーム本体側のストア説明文やプレスリリースの文面とも、主張をそろえる。
+
+### よくある編集
+
+| やりたいこと | 直す所 |
+| --- | --- |
+| 開発者のひとことを入れる | `index.html` の《開発者からのひとこと…》と《A few lines from the developer》、両ファクトシートの《　》/[ ] |
+| 発売時期・価格を入れる | `index.html` の製品情報の表（日英）、両ファクトシートの製品情報 |
+| 開発者名義・メールを変える | 製品情報、連絡先、フッター（`© Nulpoyo`）、両ファクトシート |
+| トレーラーを YouTube へ切り替える | 下の「トレーラー」。ファクトシートのトレーラー欄も |
+| スクリーンショットを原寸へ差し替える | 下の「スクリーンショットの差し替え待ち」 |
+| スクリーンショット・GIF を足す | 下の「素材を追加したときの手順」 |
+| 説明文・キャプションの言い回し | 日英の対（`l-ja` / `l-en`）を両方直す |
+
+**どの編集でも、最後に `python build_zip.py` で zip を作り直す。**ファクトシートと素材は zip にも入っている。
+公開後なら Releases へ上げ直し、コミットして push する。
+
 ## 言語切り替え
 
 ページ右上のボタンで日本語と英語を切り替える。**本文だけでなく、素材のキャプションや
@@ -38,6 +85,7 @@
 ├── fact_sheet_ja.txt   日本語のファクトシート（配布用テキスト）
 ├── fact_sheet_en.txt   英語のファクトシート
 ├── build_thumbs.py     原寸から一覧表示用の縮小版を作る
+├── build_zip.py        一括ダウンロード用の zip を作る
 ├── assets/
 │   ├── images/         スクリーンショット（原寸 PNG）
 │   ├── thumbs/         一覧表示用の縮小版 WebP  ※自動生成。直接編集しない
@@ -106,7 +154,7 @@
 1. `assets/images/` へ同じ番号・名前の `.png` で置き、`.jpg` を消す
 2. `python build_thumbs.py`
 3. `index.html` のスクリーンショットの `href` と `src` を `.png` に直し、説明文の「800×450」と原寸を送る旨の文を消す
-4. zip を作り直して Releases へ上げる
+4. `python build_zip.py` で zip を作り直して Releases へ上げる
 
 GIF から mp4 を作り直すとき。
 
@@ -193,25 +241,11 @@ ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -crf 24 \
 
 ## zip の作り直し
 
-素材を追加・差し替えたら zip も作り直し、**Releases へ上書きアップロードする**。
-zip 自体はコミットされない。容量が変わったら `index.html` のボタンの表記も直す。
+素材やファクトシートを直したら zip も作り直し、**Releases へ上書きアップロードする**。
+zip 自体はコミットされない。容量が変わったら `index.html` のボタンの表記（日英2か所）も直す。
 
 ```bash
-python - <<'EOF'
-import os
-import zipfile
-
-out = "downloads/CrazyCityGolf_PressKit.zip"
-os.path.exists(out) and os.remove(out)
-z = zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED)
-for f in ["fact_sheet_ja.txt", "fact_sheet_en.txt"]:
-    z.write(f, "CrazyCityGolf_PressKit/" + f)
-for sub in ["assets/images", "assets/gifs", "assets/branding"]:
-    for f in sorted(os.listdir(sub)):
-        if not f.startswith("."):
-            z.write(os.path.join(sub, f), "CrazyCityGolf_PressKit/" + sub.split("/")[1] + "/" + f)
-z.close()
-EOF
+python build_zip.py
 gh release upload assets downloads/CrazyCityGolf_PressKit.zip --clobber
 ```
 
@@ -220,7 +254,7 @@ gh release upload assets downloads/CrazyCityGolf_PressKit.zip --clobber
 1. スクリーンショットは `assets/images/`（原寸）へ置く。命名は `<番号>_<名前>.png`
 2. `python build_thumbs.py` を実行して縮小版を作り直す
 3. `index.html` の対応する grid に `<figure>` を足す（`figcaption` は日英の対で書く）
-4. zip を作り直し、Releases へ上書きアップロードする
+4. `python build_zip.py` で zip を作り直し、Releases へ上書きアップロードする
 5. コミットして push する。GitHub Pages への反映は数十秒〜数分
 
 ## 公開の手順（初回）
