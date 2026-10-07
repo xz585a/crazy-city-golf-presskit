@@ -12,7 +12,7 @@ Players:      1-8 (online; solo play against CPU golfers)
 Languages:    English, Japanese
 Release:      TBA
 Price:        TBA
-Developer:    Nulpoyo (solo)
+Developer:    Nulpoyo (two-person indie team)
 Steam:        https://store.steampowered.com/app/5347600/
 Press kit:    https://xz585a.github.io/crazy-city-golf-presskit/
 Trailer:      (YouTube link to come. The mp4 can be downloaded from the press kit page.)
@@ -62,7 +62,8 @@ Key features
 Developer
 ================================================================
 
-Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
+Nulpoyo is a two-person indie team from Japan: two colleagues who joined the same company
+in the same year, making games together alongside their full-time office jobs.
 
 [A few lines from the developer]
 
@@ -78,5 +79,5 @@ captured or a different asset, just ask.
 Contact
 ================================================================
 
-Nulpoyo (solo developer)
+Nulpoyo (two-person indie team)
 Email: xz585a@gmail.com
