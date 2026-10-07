@@ -79,7 +79,7 @@
 | ここ | ゲーム本体側の素材ID・元のファイル |
 | --- | --- |
 | `assets/gifs/01_meteor_start.gif` 〜 `09_awards.gif` | GIF 一式 `01_同時スタートに隕石_none_16x9_v01.gif` 〜 `09_表彰式_none_16x9_v01.gif`（番号は同じ） |
-| `assets/images/01_rooftop.jpg` 〜 `09_beach_putt.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450）で保存したもの。対応は下表 |
+| `assets/images/01_sticky_wall.jpg` 〜 `09_beach_putt.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450）で保存したもの。対応は下表 |
 | `assets/gifs/loop_*.mp4` | 上の GIF を ffmpeg で mp4 にしたもの（下記） |
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
@@ -88,7 +88,7 @@
 
 | ここ | 受け取ったファイル |
 | --- | --- |
-| `01_rooftop.jpg` | `ss_653b8b33142e7dd52b57488bd6c43cda6dffa4bc.800x600.jpg` |
+| `01_sticky_wall.jpg` | `ss_653b8b33142e7dd52b57488bd6c43cda6dffa4bc.800x600.jpg` |
 | `02_island_eight_players.jpg` | `ss_477cb59c4ee11a6f3001fb31d34a354a8e27d13f.800x600.jpg` |
 | `03_side_gravity.jpg` | `ss_be50ce693a1a015c7492f73fb6d7b2a4fc2501bf.800x600.jpg` |
 | `04_super_bounce.jpg` | `ss_db9d2150570e070ac721e492a6b14355d67875aa.800x600.jpg` |
