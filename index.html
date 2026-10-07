@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crazy City Golf — Press Kit</title>
+<meta name="description" content="Press kit for Crazy City Golf, an online party golf game for up to 8 players where the whole city is the course.">
+<link rel="icon" href="assets/branding/app_icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #0a1530;
+    --bg-alt: #12204a;
+    --line: #24356a;
+    --fg: #f2f5fb;
+    --fg-dim: #a3b1d1;
+    --accent: #ffcf2e;
+    --accent-dim: #8a6d10;
+    --radius: 6px;
+    --max: 900px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent); }
+  a:hover { color: #ffe27a; }
+
+  /* ---- 言語切り替え ----
+     JS が動かない場合は両方表示される（body に class が付かないため）。 */
+  body.lang-ja .l-en { display: none; }
+  body.lang-en .l-ja { display: none; }
+
+  /* ---- header ---- */
+  header {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #2f6fd6 0%, #173a86 45%, var(--bg) 100%);
+    padding: 44px 0 36px;
+    text-align: center;
+  }
+  header img.logo { width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; }
+  h1 { font-size: 2.1rem; margin: 14px 0 6px; letter-spacing: .04em; }
+  /* ロゴ画像がタイトルを担うので、h1 は読み上げと検索向けに残して視覚的にだけ隠す */
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .tagline { color: var(--fg-dim); margin: 0 auto; max-width: 620px; }
+
+  .switch { margin-top: 24px; }
+  .switch button {
+    font: inherit; font-size: .88rem; cursor: pointer;
+    padding: 6px 18px; margin: 0 3px;
+    background: transparent; color: var(--fg-dim);
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .switch button:hover { border-color: var(--accent-dim); color: var(--fg); }
+  .switch button[aria-pressed="true"] {
+    background: var(--accent); border-color: var(--accent); color: #1a1300; font-weight: bold;
+  }
+  .anchors { margin-top: 14px; font-size: .88rem; }
+  .anchors a { margin: 0 9px; text-decoration: none; }
+  .anchors a:hover { text-decoration: underline; }
+
+  /* ---- sections ---- */
+  section { padding: 46px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 1.35rem; margin: 0 0 10px; color: var(--accent); letter-spacing: .03em; }
+  h3 { font-size: 1.02rem; margin: 30px 0 8px; color: var(--fg); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.25em; }
+  li { margin-bottom: 5px; }
+  .lead { color: var(--fg-dim); font-size: .93rem; }
+
+  /* ---- fact sheet ---- */
+  table.facts { width: 100%; border-collapse: collapse; font-size: .94rem; }
+  table.facts th, table.facts td {
+    text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  table.facts th { color: var(--fg-dim); font-weight: normal; width: 30%; white-space: nowrap; }
+
+  /* ---- buttons ---- */
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: var(--radius);
+    background: var(--accent); color: #1a1300; text-decoration: none; font-weight: bold;
+  }
+  .btn:hover { background: #ffe27a; color: #1a1300; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent-dim); }
+  .btn.ghost:hover { background: rgba(255,207,46,.1); color: var(--accent); }
+
+  /* ---- トレーラー ----
+     display は必ずクラス側に置く。インライン style だと言語切り替えの
+     display:none に勝ってしまい、日英2本が同時に出る。
+     iframe には固有の縦横比が無いので、aspect-ratio を外すと潰れる。 */
+  .trailer-player {
+    width: 100%; display: block; background: #000; aspect-ratio: 16 / 9;
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+
+  /* ---- media grid ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
+  figure { margin: 0; }
+  /* 画像のリンクだけをブロックにする。キャプション内のリンクまで改行させない */
+  figure > a { display: block; }
+  figure img, figure video {
+    width: 100%; display: block; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--bg-alt);
+  }
+  figcaption { font-size: .82rem; color: var(--fg-dim); margin-top: 6px; }
+
+  /* ---- misc ---- */
+  .note {
+    background: var(--bg-alt); border-left: 3px solid var(--accent-dim);
+    padding: 14px 18px; border-radius: 0 var(--radius) var(--radius) 0; margin: 18px 0;
+    color: var(--fg-dim); font-size: .93rem;
+  }
+  footer { padding: 34px 0 60px; color: var(--fg-dim); font-size: .88rem; text-align: center; }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 1.6rem; }
+    table.facts th { width: 40%; white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="assets/branding/logo_1280x563.png" alt="Crazy City Golf">
+    <h1 class="visually-hidden">Crazy City Golf</h1>
+    <p class="tagline l-ja">街まるごとがゴルフコース。道順は自由、事故はごちそう。最大8人が同じ街を同時に駆け回る、オンライン・パーティアクションゴルフ。</p>
+    <p class="tagline l-en">The whole city is the course. Take any route you like — the accidents are the best part. An online party golf game for up to 8 players, all teeing off at once.</p>
+    <div class="switch">
+      <button type="button" id="btn-ja" aria-pressed="false">日本語</button>
+      <button type="button" id="btn-en" aria-pressed="false">English</button>
+    </div>
+    <nav class="anchors">
+      <span class="l-ja">
+        <a href="#trailer">トレーラー</a><a href="#about">概要</a><a href="#media">素材</a><a href="#downloads">ダウンロード</a><a href="#contact">連絡先</a>
+      </span>
+      <span class="l-en">
+        <a href="#trailer">Trailer</a><a href="#about">About</a><a href="#media">Media</a><a href="#downloads">Downloads</a><a href="#contact">Contact</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ トレーラー ============ -->
+<section id="trailer">
+  <div class="wrap">
+    <h2 class="l-ja">トレーラー</h2>
+    <h2 class="l-en">Trailer</h2>
+    <!-- 現状は mp4 を Releases から直接再生している。YouTube へ上げたら、この <video> を
+         youtube-nocookie.com/embed/<id> の iframe へ差し替える（class="trailer-player" は
+         そのまま使う）。display はクラス側に置くこと。インライン style だと言語切り替えの
+         display:none に勝ち、2本が同時に出る。
+         テロップは英語の1本だけなので、日英で同じ1本を使う。 -->
+    <div style="margin-top:18px;">
+      <video class="trailer-player" controls preload="none"
+             poster="assets/branding/keyart_nologo_1840x860.png"
+             src="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4"></video>
+    </div>
+    <p class="lead l-ja" style="margin-top:12px;">約100秒。テロップと映像内の UI は英語表示です。</p>
+    <p class="lead l-en" style="margin-top:12px;">About 100 seconds. On-screen captions and UI are in English.</p>
+    <div class="buttons">
+      <a class="btn" href="https://store.steampowered.com/app/5347600/"><span class="l-ja">Steam ストアページ</span><span class="l-en">Steam page</span></a>
+      <a class="btn ghost" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4" download><span class="l-ja">トレーラー mp4 をダウンロード（29MB）</span><span class="l-en">Download trailer mp4 (29 MB)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 概要 ============ -->
+<section id="about">
+  <div class="wrap">
+
+    <!-- 日本語 -->
+    <div class="l-ja">
+      <h2>概要</h2>
+      <p>『Crazy City Golf』は、街まるごとをゴルフコースにした、PC 向けのオンライン・パーティアクションゴルフです。招待したフレンドと同じ街に立ち、全員が同時にゴールを目指します。</p>
+      <p><strong>道順は自由です。</strong>スタートとゴールは全員共通ですが、そこまでの道はひとつではありません。道路を素直に刻むか、路地を抜けるか、ビルの屋上を渡るか。川も線路も、境界にも近道にもなります。街はラウンドごとに丸ごと自動生成され、ラウンドの間は変わりません。ホールを重ねるほど「あの屋根に乗れば近い」という知識が増えていきます。</p>
+      <p><strong>事故はごちそうです。</strong>走る車にはね飛ばされ、ドラム缶は爆発し、消火栓は水柱を上げます。思いどおりにならない物理の事故は、損にもなれば、誰も思いつかなかった近道にもなります。順番待ちはありません。最大8人の球が同じ街を同時に飛び交い、失敗も逆転も、その場の全員の笑いになります。</p>
+      <p><strong>アイテムは打球の法則を変えます。</strong>壁に張り付いてビルを登る粘着、建物をすり抜けるゴースト、ひと打ちを無かったことにする巻き戻し。自分に掛けるか、自分以外の全員に掛けるかを選べます。隕石・竜巻・雷・UFO のように、街そのものに出来事を起こすアイテムもあります。</p>
+      <p>ひとりのときは CPU を最大7人まで入れて遊べます。1ホールは数分、1ラウンドは10〜20分ほどです。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><strong>街まるごとがコース</strong> — ラウンドごとに自動生成される街。道路、路地、屋上、川、線路、どこを通ってもいい</li>
+        <li><strong>最大8人が同時に打つ</strong> — 順番待ちなし。全員が同じ街を同時に駆け回る</li>
+        <li><strong>事故はごちそう</strong> — 車、爆発、水柱。街の物理が一打を狂わせ、ときには近道に変える</li>
+        <li><strong>法則を変えるアイテム</strong> — 粘着でビルを登り、ゴーストで壁を抜け、巻き戻しで一打を消す。自分にも、全員にも</li>
+        <li><strong>街に起きる災害</strong> — 隕石、竜巻、雷、UFO。逃げ遅れた球は巻き込まれる</li>
+        <li><strong>天気が球を変える</strong> — 晴れ・雨・雪・嵐で、着地してからの転がりが変わる</li>
+        <li><strong>最後まで逆転がある</strong> — ラウンドの終わりに称号を抽選し、記録が一番の人に打数のボーナス</li>
+        <li><strong>フレンドとも、ひとりでも</strong> — Steam のフレンド招待と公開ロビー。ひとりなら CPU と</li>
+      </ul>
+
+      <h3>製品情報</h3>
+      <table class="facts">
+        <tr><th>タイトル</th><td>Crazy City Golf</td></tr>
+        <tr><th>ジャンル</th><td>オンライン・パーティアクションゴルフ</td></tr>
+        <tr><th>プラットフォーム</th><td>PC（Windows / Steam）</td></tr>
+        <tr><th>プレイ人数</th><td>1〜8人（オンライン。ひとりのときは CPU と対戦）</td></tr>
+        <tr><th>対応言語</th><td>日本語、英語</td></tr>
+        <tr><th>発売時期</th><td>未定</td></tr>
+        <tr><th>価格</th><td>未定</td></tr>
+        <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
+        <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+      </table>
+
+      <div class="note">題名は、文字として出るところすべて <strong>Crazy City Golf</strong> です。全大文字の <strong>CRAZY CITY GOLF</strong> はロゴの見た目だけの表記ですので、本文では使わないでいただけますと幸いです。</div>
+
+      <h3>開発者</h3>
+      <p>Nulpoyo（ぬるぽよ）。日本の会社員。本業のかたわら、個人でゲームを制作しています。</p>
+      <p>《開発者からのひとこと。なぜ作ったか、どこに力を入れたか、どう遊んでほしいか》</p>
+    </div>
+
+    <!-- English -->
+    <div class="l-en">
+      <h2>About</h2>
+      <p>Crazy City Golf is an online party golf game for PC where the whole city is the course. You and the friends you invite stand in the same city and all play for the same hole at once.</p>
+      <p><strong>Take any route you like.</strong> Everyone shares the same tee and the same cup, but there is never just one way between them. Grind it out down the street, slip through an alley, or hop across the rooftops. Rivers and railways are both hazards and shortcuts. Each round generates a whole new city, and it stays put for the round — so with every hole you learn a little more about which roof gets you there faster.</p>
+      <p><strong>The accidents are the best part.</strong> Passing cars send your ball flying, oil drums explode, fire hydrants blast it skyward. Physics you can't quite control can cost you a stroke — or open a shortcut nobody saw coming. There are no turns: up to 8 balls fly through the same city at the same time, and every blunder and comeback happens in front of everyone.</p>
+      <p><strong>Items rewrite the rules of the shot.</strong> Sticky lets you climb a building wall, Ghost passes straight through it, Rewind takes a shot back. Use them on yourself, or on everyone else. Some items set off events in the city itself: meteors, tornadoes, lightning and UFOs.</p>
+      <p>Playing alone? Fill the round with up to 7 CPU golfers. A hole takes a few minutes; a full round runs about 10 to 20.</p>
+
+      <h3>Key features</h3>
+      <ul>
+        <li><strong>The whole city is the course</strong> — A freshly generated city each round. Streets, alleys, rooftops, rivers, railways — go anywhere</li>
+        <li><strong>Up to 8 players, all at once</strong> — No waiting for your turn. Everyone plays the same city at the same time</li>
+        <li><strong>The accidents are the fun</strong> — Cars, explosions, water jets. City physics wrecks your shot — or hands you a shortcut</li>
+        <li><strong>Items that bend the rules</strong> — Climb walls with Sticky, pass through them with Ghost, undo a shot with Rewind. On yourself, or on everyone</li>
+        <li><strong>Disasters in the streets</strong> — Meteors, tornadoes, lightning and UFOs. Balls caught out get swept up</li>
+        <li><strong>Weather that matters</strong> — Sun, rain, snow and storms change how the ball runs after it lands</li>
+        <li><strong>Comebacks to the very end</strong> — Bonus titles are drawn at the end of each round, and the record holder gets strokes back</li>
+        <li><strong>With friends or on your own</strong> — Steam friend invites and public lobbies, or play solo against CPU golfers</li>
+      </ul>
+
+      <h3>Fact sheet</h3>
+      <table class="facts">
+        <tr><th>Title</th><td>Crazy City Golf</td></tr>
+        <tr><th>Genre</th><td>Online party action golf</td></tr>
+        <tr><th>Platform</th><td>PC (Windows / Steam)</td></tr>
+        <tr><th>Players</th><td>1–8 (online; solo play against CPU golfers)</td></tr>
+        <tr><th>Languages</th><td>English, Japanese</td></tr>
+        <tr><th>Release</th><td>TBA</td></tr>
+        <tr><th>Price</th><td>TBA</td></tr>
+        <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
+        <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+      </table>
+
+      <div class="note">In running text the title is always <strong>Crazy City Golf</strong>. The all-caps <strong>CRAZY CITY GOLF</strong> belongs to the logo artwork only — please don't set the title in caps in body copy.</div>
+
+      <h3>Developer</h3>
+      <p>Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.</p>
+      <p>《A few lines from the developer》</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 素材 ============ -->
+<section id="media">
+  <div class="wrap">
+    <h2 class="l-ja">スクリーンショット</h2>
+    <h2 class="l-en">Screenshots</h2>
+    <!-- 採用が決まったら assets/images/ へ <番号>_<名前>.png で置き、build_thumbs.py を実行して
+         下の grid に <figure> を足す。準備中の段落は消す。 -->
+    <p class="lead l-ja">準備中です。必要でしたら、特定の場面を撮影してお送りします。</p>
+    <p class="lead l-en">Coming soon. Happy to capture specific scenes on request.</p>
+    <div class="grid" id="shots"></div>
+
+    <h2 style="margin-top:44px;" class="l-ja">GIF・ループ動画</h2>
+    <h2 style="margin-top:44px;" class="l-en">GIFs &amp; loops</h2>
+    <p class="lead l-ja">記事や投稿にそのままお使いいただけます。ページ上では軽い mp4 で再生しています。<strong>GIF（616×346）と mp4 のどちらもダウンロードできます。</strong>画面の UI は英語表示です。</p>
+    <p class="lead l-en">Free to embed as-is. The page plays lightweight mp4 versions; <strong>both the GIF (616×346) and the mp4 are available to download.</strong> The UI shown is in English.</p>
+    <div class="grid" id="gifs">
+      <figure>
+        <video src="assets/gifs/loop_01_meteor_start.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">全員の同時スタートに隕石が落ちる — <a href="assets/gifs/01_meteor_start.gif">GIF</a> / <a href="assets/gifs/loop_01_meteor_start.mp4">mp4</a></span><span class="l-en">A meteor lands on everyone's opening shot — <a href="assets/gifs/01_meteor_start.gif">GIF</a> / <a href="assets/gifs/loop_01_meteor_start.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_02_landmarks.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">ラウンドごとに生まれる街と名所 — <a href="assets/gifs/02_landmarks.gif">GIF</a> / <a href="assets/gifs/loop_02_landmarks.mp4">mp4</a></span><span class="l-en">A new city, and its landmarks, every round — <a href="assets/gifs/02_landmarks.gif">GIF</a> / <a href="assets/gifs/loop_02_landmarks.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_03_eight_players.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">8人が同じ街で同時に打つ — <a href="assets/gifs/03_eight_players.gif">GIF</a> / <a href="assets/gifs/loop_03_eight_players.mp4">mp4</a></span><span class="l-en">Eight players teeing off at once — <a href="assets/gifs/03_eight_players.gif">GIF</a> / <a href="assets/gifs/loop_03_eight_players.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_04_sticky_cup_in.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">粘着で壁に張り付き、そこからカップイン — <a href="assets/gifs/04_sticky_cup_in.gif">GIF</a> / <a href="assets/gifs/loop_04_sticky_cup_in.mp4">mp4</a></span><span class="l-en">Stuck to a wall with Sticky — and holed from there — <a href="assets/gifs/04_sticky_cup_in.gif">GIF</a> / <a href="assets/gifs/loop_04_sticky_cup_in.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_05_rewind.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">巻き戻しで、いまの一打を無かったことに — <a href="assets/gifs/05_rewind.gif">GIF</a> / <a href="assets/gifs/loop_05_rewind.mp4">mp4</a></span><span class="l-en">Rewind takes the last shot back — <a href="assets/gifs/05_rewind.gif">GIF</a> / <a href="assets/gifs/loop_05_rewind.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_06_hit_by_car.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">走る車にはね飛ばされる — <a href="assets/gifs/06_hit_by_car.gif">GIF</a> / <a href="assets/gifs/loop_06_hit_by_car.mp4">mp4</a></span><span class="l-en">Sent flying by a passing car — <a href="assets/gifs/06_hit_by_car.gif">GIF</a> / <a href="assets/gifs/loop_06_hit_by_car.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_07_barrel_explosion.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">ドラム缶の爆発で吹き飛ぶ — <a href="assets/gifs/07_barrel_explosion.gif">GIF</a> / <a href="assets/gifs/loop_07_barrel_explosion.mp4">mp4</a></span><span class="l-en">Blown away by an exploding oil drum — <a href="assets/gifs/07_barrel_explosion.gif">GIF</a> / <a href="assets/gifs/loop_07_barrel_explosion.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_08_hydrant.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">消火栓の水柱に打ち上げられる — <a href="assets/gifs/08_hydrant.gif">GIF</a> / <a href="assets/gifs/loop_08_hydrant.mp4">mp4</a></span><span class="l-en">Launched by a fire hydrant — <a href="assets/gifs/08_hydrant.gif">GIF</a> / <a href="assets/gifs/loop_08_hydrant.mp4">mp4</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_09_awards.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">ラウンドの終わりの称号とボーナス — <a href="assets/gifs/09_awards.gif">GIF</a> / <a href="assets/gifs/loop_09_awards.mp4">mp4</a></span><span class="l-en">End-of-round bonus titles — <a href="assets/gifs/09_awards.gif">GIF</a> / <a href="assets/gifs/loop_09_awards.mp4">mp4</a></span></figcaption>
+      </figure>
+    </div>
+
+    <h2 style="margin-top:44px;" class="l-ja">ロゴ・キーアート</h2>
+    <h2 style="margin-top:44px;" class="l-en">Logo &amp; key art</h2>
+    <p class="lead l-ja">Steam 用に書き出した原寸です。ロゴは背景が透過した PNG。ロゴなしのキーアートも置いています。クリックで原寸が開きます。</p>
+    <p class="lead l-en">Originals as exported for Steam. The logo is a PNG with a transparent background; key art without the logo is included too. Click for the full-size file.</p>
+    <div class="grid" id="branding">
+      <figure>
+        <a href="assets/branding/logo_1280x563.png"><img src="assets/branding/logo_1280x563.png" alt="Logo (transparent PNG, 1280×563)" loading="lazy"></a>
+        <figcaption><span class="l-ja">ロゴ（透過 PNG、1280×563）</span><span class="l-en">Logo (transparent PNG, 1280×563)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_main_1232x706.png"><img src="assets/branding/capsule_main_1232x706.png" alt="Key art / main capsule (1232×706)" loading="lazy"></a>
+        <figcaption><span class="l-ja">キーアート / メインカプセル（1232×706）</span><span class="l-en">Key art / main capsule (1232×706)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/keyart_nologo_1840x860.png"><img src="assets/branding/keyart_nologo_1840x860.png" alt="Key art without logo (1840×860)" loading="lazy"></a>
+        <figcaption><span class="l-ja">キーアート・ロゴなし（1840×860）</span><span class="l-en">Key art without logo (1840×860)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/keyart_nologo_1232x706.png"><img src="assets/branding/keyart_nologo_1232x706.png" alt="Key art without logo (1232×706)" loading="lazy"></a>
+        <figcaption><span class="l-ja">キーアート・ロゴなし（1232×706）</span><span class="l-en">Key art without logo (1232×706)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_header_920x430.png"><img src="assets/branding/capsule_header_920x430.png" alt="Header capsule (920×430)" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヘッダーカプセル（920×430）</span><span class="l-en">Header capsule (920×430)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_vertical_748x896.png"><img src="assets/branding/capsule_vertical_748x896.png" alt="Vertical capsule (748×896)" loading="lazy"></a>
+        <figcaption><span class="l-ja">縦型カプセル（748×896）</span><span class="l-en">Vertical capsule (748×896)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_small_462x174.png"><img src="assets/branding/capsule_small_462x174.png" alt="Small capsule (462×174)" loading="lazy"></a>
+        <figcaption><span class="l-ja">小型カプセル（462×174）</span><span class="l-en">Small capsule (462×174)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_library_600x900.png"><img src="assets/branding/capsule_library_600x900.png" alt="Library capsule (600×900)" loading="lazy"></a>
+        <figcaption><span class="l-ja">ライブラリカプセル（600×900）</span><span class="l-en">Library capsule (600×900)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/library_header_920x430.png"><img src="assets/branding/library_header_920x430.png" alt="Library header (920×430)" loading="lazy"></a>
+        <figcaption><span class="l-ja">ライブラリヘッダー（920×430）</span><span class="l-en">Library header (920×430)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/hero_3840x1240.png"><img src="assets/branding/hero_3840x1240.png" alt="Hero banner (3840×1240)" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヒーローバナー（3840×1240）</span><span class="l-en">Hero banner (3840×1240)</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ダウンロード ============ -->
+<section id="downloads">
+  <div class="wrap">
+    <h2 class="l-ja">ダウンロード</h2>
+    <h2 class="l-en">Downloads</h2>
+    <div class="buttons">
+      <a class="btn" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（65MB）</span><span class="l-en">Full press kit, zip (65 MB)</span></a>
+      <a class="btn ghost" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4" download><span class="l-ja">トレーラー mp4（29MB）</span><span class="l-en">Trailer mp4 (29 MB)</span></a>
+      <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
+      <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
+    </div>
+    <p class="lead l-ja" style="margin-top:14px;">zip には GIF とループ動画（mp4、無音）各9点、ロゴとキーアートを含むブランド素材10点、ファクトシート（日英）が入っています。トレーラーは別にダウンロードしてください。</p>
+    <p class="lead l-en" style="margin-top:14px;">The zip contains 9 GIFs and 9 silent loops (mp4), 10 branding files including the logo and key art, and both fact sheets. The trailer is a separate download.</p>
+
+    <div class="l-ja">
+      <h3>素材の利用について</h3>
+      <p>本プレスキットに含まれる画像・動画・テキストは、記事・動画・配信でのご使用が自由です。実況・収益化を含む配信も許可しています。事前・事後のご連絡は不要です。特定の場面のキャプチャや追加の素材が必要でしたら、お気軽にお申し付けください。</p>
+    </div>
+    <div class="l-en">
+      <h3>Usage permission</h3>
+      <p>All assets in this press kit are free to use in articles, videos and streams, including monetized content. No permission or notification needed. If you need a specific scene captured or a different asset, just ask.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 連絡先 ============ -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="l-ja">連絡先</h2>
+    <h2 class="l-en">Contact</h2>
+    <table class="facts l-ja">
+      <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
+      <tr><th>メール</th><td><a href="mailto:xz585a@gmail.com">xz585a@gmail.com</a></td></tr>
+      <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+    </table>
+    <table class="facts l-en">
+      <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
+      <tr><th>Email</th><td><a href="mailto:xz585a@gmail.com">xz585a@gmail.com</a></td></tr>
+      <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+    </table>
+    <div class="note l-ja">追加のスクリーンショット、特定の場面の撮影、マルチプレイでの取材などは、上記メールへお気軽にご連絡ください。</div>
+    <div class="note l-en">Extra screenshots, custom captures, or a multiplayer session for coverage — just email me.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Crazy City Golf — Press Kit &nbsp;/&nbsp; © Nulpoyo</div>
+</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var buttons = { ja: document.getElementById('btn-ja'), en: document.getElementById('btn-en') };
+
+  function apply(lang) {
+    body.classList.remove('lang-ja', 'lang-en');
+    body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    buttons.ja.setAttribute('aria-pressed', String(lang === 'ja'));
+    buttons.en.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('ccg-presskit-lang', lang); } catch (e) {}
+    playVisibleLoops();
+  }
+
+  // display:none だったループ動画は、表示に切り替わっても自動では再生が始まらない
+  // ブラウザがあるため、明示的に鳴らす（muted なので自動再生は許可される）。
+  function playVisibleLoops() {
+    var loops = document.querySelectorAll('#gifs video');
+    for (var i = 0; i < loops.length; i++) {
+      var v = loops[i];
+      if (v.offsetParent === null) continue;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
+
+  // 手元で開いたとき（localhost / file://）だけ、トレーラーを Git 管理外の
+  // assets/video/ から再生する。公開前は Releases 側がまだ空で 404 になるため。
+  // 公開後の GitHub Pages では動かない ── そちらは Releases の mp4 を見る。
+  (function () {
+    var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+                || location.protocol === 'file:';
+    if (!local) return;
+    var v = document.querySelector('#trailer video');
+    if (v) v.src = 'assets/video/CrazyCityGolf_Trailer.mp4';
+  })();
+
+  // autoplay が効かない環境（タブが裏にあった、省電力設定など）でも、
+  // 画面に入ったループ動画は再生し、外れたら止める。9本を同時に回し続けないためでもある。
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting && v.offsetParent !== null) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    });
+    var all = document.querySelectorAll('#gifs video');
+    for (var k = 0; k < all.length; k++) io.observe(all[k]);
+  }
+
+  // 優先順位: 前回の選択 > ブラウザの言語設定 > 英語
+  var saved = null;
+  try { saved = localStorage.getItem('ccg-presskit-lang'); } catch (e) {}
+  var initial = saved || ((navigator.language || 'en').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en');
+  apply(initial);
+
+  buttons.ja.addEventListener('click', function () { apply('ja'); });
+  buttons.en.addEventListener('click', function () { apply('en'); });
+})();
+</script>
+</body>
+</html>

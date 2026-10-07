@@ -1,0 +1,82 @@
+Crazy City Golf — Fact sheet (English)
+https://store.steampowered.com/app/5347600/
+
+================================================================
+Fact sheet
+================================================================
+
+Title:        Crazy City Golf
+Genre:        Online party action golf
+Platform:     PC (Windows / Steam)
+Players:      1-8 (online; solo play against CPU golfers)
+Languages:    English, Japanese
+Release:      TBA
+Price:        TBA
+Developer:    Nulpoyo (solo)
+Steam:        https://store.steampowered.com/app/5347600/
+Press kit:    https://xz585a.github.io/crazy-city-golf-presskit/
+Trailer:      (YouTube link to come. The mp4 can be downloaded from the press kit page.)
+
+Note: in running text the title is always "Crazy City Golf". The all-caps
+"CRAZY CITY GOLF" belongs to the logo artwork only.
+
+================================================================
+About
+================================================================
+
+Crazy City Golf is an online party golf game for PC where the whole city is the course. You and
+the friends you invite stand in the same city and all play for the same hole at once.
+
+Take any route you like. Everyone shares the same tee and the same cup, but there is never just
+one way between them. Grind it out down the street, slip through an alley, or hop across the
+rooftops. Rivers and railways are both hazards and shortcuts. Each round generates a whole new
+city, and it stays put for the round - so with every hole you learn a little more about which
+roof gets you there faster.
+
+The accidents are the best part. Passing cars send your ball flying, oil drums explode, fire
+hydrants blast it skyward. Physics you can't quite control can cost you a stroke - or open a
+shortcut nobody saw coming. There are no turns: up to 8 balls fly through the same city at the
+same time, and every blunder and comeback happens in front of everyone.
+
+Items rewrite the rules of the shot. Sticky lets you climb a building wall, Ghost passes straight
+through it, Rewind takes a shot back. Use them on yourself, or on everyone else. Some items set
+off events in the city itself: meteors, tornadoes, lightning and UFOs.
+
+Playing alone? Fill the round with up to 7 CPU golfers. A hole takes a few minutes; a full round
+runs about 10 to 20.
+
+================================================================
+Key features
+================================================================
+
+- The whole city is the course - A freshly generated city each round. Streets, alleys, rooftops, rivers, railways - go anywhere
+- Up to 8 players, all at once - No waiting for your turn. Everyone plays the same city at the same time
+- The accidents are the fun - Cars, explosions, water jets. City physics wrecks your shot - or hands you a shortcut
+- Items that bend the rules - Climb walls with Sticky, pass through them with Ghost, undo a shot with Rewind. On yourself, or on everyone
+- Disasters in the streets - Meteors, tornadoes, lightning and UFOs. Balls caught out get swept up
+- Weather that matters - Sun, rain, snow and storms change how the ball runs after it lands
+- Comebacks to the very end - Bonus titles are drawn at the end of each round, and the record holder gets strokes back
+- With friends or on your own - Steam friend invites and public lobbies, or play solo against CPU golfers
+
+================================================================
+Developer
+================================================================
+
+Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
+
+[A few lines from the developer]
+
+================================================================
+Usage permission
+================================================================
+
+All assets in this press kit are free to use in articles, videos and streams, including
+monetized content. No permission or notification needed. If you need a specific scene
+captured or a different asset, just ask.
+
+================================================================
+Contact
+================================================================
+
+Nulpoyo (solo developer)
+Email: xz585a@gmail.com
