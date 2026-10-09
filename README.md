@@ -13,12 +13,13 @@
 
 ## 状態（2026-10-10）
 
-- **内容は一旦完成。未公開。**このフォルダ（`C:\Godot\crazy-city-golf-presskit`）にだけあり、GitHub にはまだ無い
-- 公開するときは下の「公開の手順（初回）」を上から行う
-- 残っているもの：価格（いまは「未定」）
+- **公開済み（2026-10-10）。** <https://xz585a.github.io/crazy-city-golf-presskit/>
+  - GitHub Pages：`main` ブランチの `/`（root）から配信
+  - Releases の `assets` タグに zip とトレーラーの mp4 を置いてある
 - 発売時期は「2026年10月下旬」、トレーラーは YouTube（<https://youtu.be/GH-IEbvjQRM>）を埋め込んでいる
+- 残っているもの：価格（いまは「未定」）
 
-**GitHub へ上げるまで、ここが唯一のコピーである。**PC の移行や掃除の前に公開するか、別の場所へ複製する。
+**直したら push する。**Pages への反映は数十秒〜数分。zip やトレーラーを作り直したときは Releases へも上げ直す（下記）。
 `assets/video/` と `downloads/` は Git に入らないが、どちらも下の手順で作り直せる。
 
 ## 編集のしかた
