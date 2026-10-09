@@ -104,7 +104,7 @@ python -m http.server 8765
 
 ## 現在の収録物
 
-- スクリーンショット **16枚**。`16_night_fireworks.png` だけが原寸（1920×1080 PNG）で、**ほか15枚は 800×450 の JPEG（原寸ではない）**。下記「スクリーンショットの差し替え待ち」
+- スクリーンショット **9枚**（Steam ストアページと同じ。2026-10-10 に入れ替え）。`07_night_fireworks.png` だけが原寸（1920×1080 PNG）で、**ほか8枚は 800×450 の JPEG（原寸ではない）**。下記「スクリーンショットの差し替え待ち」
 - GIF **11点**（616×346）と、同じ場面のループ動画（mp4、無音）11点
   - ページ上は mp4 を再生し、GIF はダウンロード用。GIF を並べるとページが数十MBになるため
   - `10_bend_the_rules` と `11_pick_your_chaos` は英語テロップ入り
@@ -113,7 +113,7 @@ python -m http.server 8765
 - ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
 - ファクトシート 日英
 - トレーラー（約100秒、29MB に再圧縮した mp4）
-- 一括ダウンロード用 zip（120MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（119MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
 
@@ -132,8 +132,8 @@ python -m http.server 8765
 | `assets/gifs/10_bend_the_rules.gif` | `02_物理を曲げる_en_16x9_v01.gif`（2026-10-10 追加） |
 | `assets/gifs/11_pick_your_chaos.gif` | `05_選りすぐり8種_en_16x9_v01.gif`（2026-10-10 追加） |
 | `assets/gifs/12_big_ball_split.mp4` | `10_ビッグボール＋スプリット.mp4`（2026-10-10 追加。そのまま） |
-| `assets/images/01_sticky_wall.jpg` 〜 `15_split_shot.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450〜451）で保存したもの。対応は下表。10〜15 は 2026-10-10 追加 |
-| `assets/images/16_night_fireworks.png` | `夜空の8球_花火_en_16x9_v02.png`（原寸。2026-10-10 追加） |
+| `assets/images/*.jpg`（8枚） | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450〜451）で保存したもの。対応は下表 |
+| `assets/images/07_night_fireworks.png` | `夜空の8球_花火_en_16x9_v02.png`（原寸） |
 | `assets/gifs/loop_*.mp4` | 上の GIF を ffmpeg で mp4 にしたもの（下記） |
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
@@ -142,25 +142,21 @@ python -m http.server 8765
 
 | ここ | 受け取ったファイル |
 | --- | --- |
-| `01_sticky_wall.jpg` | `ss_653b8b33142e7dd52b57488bd6c43cda6dffa4bc.800x600.jpg` |
-| `02_island_eight_players.jpg` | `ss_477cb59c4ee11a6f3001fb31d34a354a8e27d13f.800x600.jpg` |
-| `03_side_gravity.jpg` | `ss_be50ce693a1a015c7492f73fb6d7b2a4fc2501bf.800x600.jpg` |
-| `04_super_bounce.jpg` | `ss_db9d2150570e070ac721e492a6b14355d67875aa.800x600.jpg` |
-| `05_big_ball.jpg` | `ss_020467b212578fa9e1f987241e6de8b3e88f96e1.800x600.jpg` |
-| `06_amusement_park.jpg` | `ss_e978d1b53e114c333fc22ad49d9a05d6ad4560a2.800x600.jpg` |
-| `07_night_harbor.jpg` | `ss_a248e2dd70d22e235b64c7694183e3567d4cd7cb.800x600.jpg` |
+| `01_sticky_wall_aim.jpg` | `ss_3af6ade5451d54e096e6daff64759e943af08a6f.800x600.jpg` |
+| `02_bomb_car.jpg` | `ss_6985bd533e64c26f448a9e9716671d03bca22eeb.800x600.jpg` |
+| `03_big_ball_street.jpg` | `ss_6a1e23f0b30a9d997901584e2ce777155daf96b9.800x600.jpg` |
+| `04_side_gravity_big_ball.jpg` | `ss_c32abca88adf32e526711833c5d03bb98aa15a0e.800x600.jpg` |
+| `05_split_shot.jpg` | `ss_ca219763aad24a50a3a0812c2e3b58f3993af258.800x600.jpg` |
+| `06_hole_recap_night.jpg` | `ss_88ea33ee151669d01ae647693e14a52a5af568a7.800x600.jpg` |
 | `08_storm_lightning.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.800x600.jpg` |
 | `09_beach_putt.jpg` | `ss_83be64ced3885aaf984fd6e9b1951a0676eda431.800x600.jpg` |
-| `10_sticky_wall_aim.jpg` | `ss_3af6ade5451d54e096e6daff64759e943af08a6f.800x600.jpg` |
-| `11_bomb_car.jpg` | `ss_6985bd533e64c26f448a9e9716671d03bca22eeb.800x600.jpg` |
-| `12_big_ball_street.jpg` | `ss_6a1e23f0b30a9d997901584e2ce777155daf96b9.800x600.jpg` |
-| `13_hole_recap_night.jpg` | `ss_88ea33ee151669d01ae647693e14a52a5af568a7.800x600.jpg` |
-| `14_side_gravity_big_ball.jpg` | `ss_c32abca88adf32e526711833c5d03bb98aa15a0e.800x600.jpg` |
-| `15_split_shot.jpg` | `ss_ca219763aad24a50a3a0812c2e3b58f3993af258.800x600.jpg` |
+
+2026-10-10 に、Steam ストアページから外した7枚（屋上・島・横向き重力・スーパーボール・BIGボール・遊園地・夜の港）を
+プレスキットからも外し、残りを 01〜09 に振り直した（未公開だったので公開URLへの影響は無い）。
 
 ### スクリーンショットの差し替え待ち
 
-`.jpg` の15枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
+`.jpg` の8枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
 編集部は記事用に切り出して拡大するので、原寸（1920×1080 の PNG。Steamworks へ上げた元ファイル）が見つかったら差し替える。
 
 1. `assets/images/` へ同じ番号・名前の `.png` で置き、`.jpg` を消す
