@@ -11,11 +11,12 @@
 何を収録するか・いつ直すかの判断は、ゲーム本体側の `marketing/手順/プレスリリース/プレスキット.md` を正とする。
 ここには、このリポジトリの運用だけを書く。
 
-## 状態（2026-10-08）
+## 状態（2026-10-10）
 
 - **内容は一旦完成。未公開。**このフォルダ（`C:\Godot\crazy-city-golf-presskit`）にだけあり、GitHub にはまだ無い
 - 公開するときは下の「公開の手順（初回）」を上から行う
-- 残っているもの：開発者のひとこと（《　》）、スクリーンショットの原寸、トレーラーの YouTube 版、発売時期・価格
+- 残っているもの：価格（いまは「未定」）、スクリーンショットの原寸（07 以外）
+- 発売時期は「2026年10月下旬」、トレーラーは YouTube（<https://youtu.be/GH-IEbvjQRM>）を埋め込んでいる
 
 **GitHub へ上げるまで、ここが唯一のコピーである。**PC の移行や掃除の前に公開するか、別の場所へ複製する。
 `assets/video/` と `downloads/` は Git に入らないが、どちらも下の手順で作り直せる。
@@ -28,7 +29,7 @@
 python -m http.server 8765
 ```
 
-を実行し、<http://localhost:8765/> を開く（トレーラーも手元のファイルで再生される）。
+を実行し、<http://localhost:8765/> を開く。
 
 ### 同じ内容が書いてある場所
 
@@ -120,9 +121,7 @@ python -m http.server 8765
 | 何 | 備考 |
 | --- | --- |
 | スクリーンショットの原寸 | 下記「スクリーンショットの差し替え待ち」 |
-| 開発者からのひとこと | `index.html` と `fact_sheet_*.txt` の《　》 |
-| トレーラーの YouTube 版 | 下記「トレーラー」 |
-| 発売時期・価格 | いまは「未定」 |
+| 価格 | いまは「未定」。`index.html` の製品情報（日英）と両ファクトシート |
 
 ## 素材の出どころ
 
@@ -194,9 +193,7 @@ gh release upload assets downloads/CrazyCityGolf_PressKit.zip --clobber
 **公開前に、この2つを Releases へ上げておくこと。**ページ上のトレーラーと
 一括ダウンロードのリンク先がこの URL なので、上げるまでは 404 になる。
 
-**手元で開いたときだけは、トレーラーが `assets/video/` から再生される。**
-`index.html` の末尾に、`localhost` と `file://` でだけ `src` を差し替える数行を入れてある。
-Releases がまだ空の状態でも、ページの見え方を確認できる。
+ページ上のトレーラーは YouTube の埋め込みなので、Releases が空でも見え方は確認できる。
 
 ```bash
 python -m http.server 8765
@@ -228,18 +225,19 @@ python build_thumbs.py
 
 ## トレーラー
 
-いまはページに `<video>` を置き、Releases の mp4 を直接再生している。
-元素材（約100秒、498MB）を ffmpeg で 29MB へ再圧縮したものである。
+ページでは YouTube を埋め込んでいる（<https://youtu.be/GH-IEbvjQRM>、約100秒、公式チャンネル Nulpoyo）。
+`#trailer` の `iframe` は `youtube-nocookie.com/embed/GH-IEbvjQRM`。製品情報の表とファクトシートにも URL を書いてある。
+
+ダウンロード用の mp4 は Releases に置く（編集部が使う）。元素材（約100秒、498MB）を ffmpeg で 29MB へ再圧縮したもの。
 
 ```bash
-ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -crf 24 \
-  -maxrate 2200k -bufsize 4400k -pix_fmt yuv420p -movflags +faststart \
-  -c:a aac -b:a 128k assets/video/CrazyCityGolf_Trailer.mp4
+ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -crf 24   -maxrate 2200k -bufsize 4400k -pix_fmt yuv420p -movflags +faststart   -c:a aac -b:a 128k assets/video/CrazyCityGolf_Trailer.mp4
 ```
 
-**YouTube へ上げたら、`#trailer` セクションの `<video>` を
-`youtube-nocookie.com/embed/<id>` の iframe へ差し替える**（`class="trailer-player"` は
-そのまま使う）。mp4 のダウンロードリンクは残す ── 編集部が使う。ファクトシートのトレーラー欄も同時に直す。
+**トレーラーを作り直すと YouTube の ID は必ず変わる。**`index.html` の `iframe` と YouTube へのリンク（説明文と製品情報、日英）、
+`fact_sheet_*.txt` のトレーラー欄、Releases の mp4 を同時に直す。
+
+埋め込み URL をブラウザで直接開くと「エラー 153」になるが、これは紹介元（Referer）が無いためで、ページに埋め込めば再生される。
 
 **iframe にもインライン `style` で `display` を書かないこと。** 言語切り替えの
 `display:none` に勝ってしまう。高さは `.trailer-player` の `aspect-ratio: 16 / 9` が

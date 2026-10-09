@@ -11,12 +11,12 @@ Platform:     PC (Windows / Steam)
 Players:      2-8 (online). Solo play against CPU golfers is also available
 Match rules:  CUP (stroke play), CHECKPOINTS (checkpoint run), TERRITORY (turf war)
 Languages:    English, Japanese
-Release:      TBA
+Release:      Late October 2026
 Price:        TBA
 Developer:    Nulpoyo (two-person indie team)
 Steam:        https://store.steampowered.com/app/5347600/
 Press kit:    https://xz585a.github.io/crazy-city-golf-presskit/
-Trailer:      (YouTube link to come. The mp4 can be downloaded from the press kit page.)
+Trailer:      https://youtu.be/GH-IEbvjQRM (the mp4 can be downloaded from the press kit page)
 
 Note: in running text the title is always "Crazy City Golf". The all-caps
 "CRAZY CITY GOLF" belongs to the logo artwork only.
@@ -65,10 +65,9 @@ Key features
 Developer
 ================================================================
 
-Nulpoyo is a two-person indie team from Japan: two colleagues who joined the same company
-in the same year, making games together alongside their full-time office jobs.
+Nulpoyo is an indie team of two office workers in Japan - colleagues who joined the same company in the same year - making games alongside their day jobs.
 
-[A few lines from the developer]
+We both work on the game only after our day jobs are done. Before we know it, it's 5 a.m.: just as real golfers are getting up for the first tee time of the day, our round of city golf comes to an end.
 
 ================================================================
 Usage permission

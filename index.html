@@ -155,18 +155,19 @@
   <div class="wrap">
     <h2 class="l-ja">トレーラー</h2>
     <h2 class="l-en">Trailer</h2>
-    <!-- 現状は mp4 を Releases から直接再生している。YouTube へ上げたら、この <video> を
-         youtube-nocookie.com/embed/<id> の iframe へ差し替える（class="trailer-player" は
-         そのまま使う）。display はクラス側に置くこと。インライン style だと言語切り替えの
-         display:none に勝ち、2本が同時に出る。
-         テロップは英語の1本だけなので、日英で同じ1本を使う。 -->
+    <!-- YouTube の埋め込み。mp4 のダウンロードリンクは下に残す（編集部が使う）。
+         display はクラス側に置くこと。インライン style だと言語切り替えの display:none に勝ち、
+         2本が同時に出る。iframe には固有の縦横比が無いので、.trailer-player の aspect-ratio が高さを持つ。
+         テロップは英語の1本だけなので、日英で同じ1本を使う。
+         トレーラーを作り直すと ID が変わる。ここ・下のリンク・ファクトシート（日英）を同時に直す。 -->
     <div style="margin-top:18px;">
-      <video class="trailer-player" controls preload="none"
-             poster="assets/branding/keyart_nologo_1840x860.png"
-             src="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4"></video>
+      <iframe class="trailer-player" src="https://www.youtube-nocookie.com/embed/GH-IEbvjQRM"
+              title="Crazy City Golf - Official Trailer" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-    <p class="lead l-ja" style="margin-top:12px;">約100秒。テロップと映像内の UI は英語表示です。</p>
-    <p class="lead l-en" style="margin-top:12px;">About 100 seconds. On-screen captions and UI are in English.</p>
+    <p class="lead l-ja" style="margin-top:12px;">約100秒。テロップと映像内の UI は英語表示です。YouTube: <a href="https://youtu.be/GH-IEbvjQRM">https://youtu.be/GH-IEbvjQRM</a></p>
+    <p class="lead l-en" style="margin-top:12px;">About 100 seconds. On-screen captions and UI are in English. YouTube: <a href="https://youtu.be/GH-IEbvjQRM">https://youtu.be/GH-IEbvjQRM</a></p>
     <div class="buttons">
       <a class="btn" href="https://store.steampowered.com/app/5347600/"><span class="l-ja">Steam ストアページ</span><span class="l-en">Steam page</span></a>
       <a class="btn ghost" href="https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4" download><span class="l-ja">トレーラー mp4 をダウンロード（29MB）</span><span class="l-en">Download trailer mp4 (29 MB)</span></a>
@@ -214,17 +215,18 @@
         <tr><th>プレイ人数</th><td>2〜8人（オンライン）。ひとりのときは CPU と遊べます</td></tr>
         <tr><th>対戦ルール</th><td>CUP（打数勝負）、CHECKPOINTS（チェックポイント巡り）、TERRITORY（陣取り）</td></tr>
         <tr><th>対応言語</th><td>日本語、英語</td></tr>
-        <tr><th>発売時期</th><td>未定</td></tr>
+        <tr><th>発売時期</th><td>2026年10月下旬</td></tr>
         <tr><th>価格</th><td>未定</td></tr>
         <tr><th>開発</th><td>Nulpoyo（2人のインディーチーム）</td></tr>
         <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+        <tr><th>トレーラー</th><td><a href="https://youtu.be/GH-IEbvjQRM">youtu.be/GH-IEbvjQRM</a></td></tr>
       </table>
 
       <div class="note">題名は、文字として出るところすべて <strong>Crazy City Golf</strong> です。全大文字の <strong>CRAZY CITY GOLF</strong> はロゴの見た目だけの表記ですので、本文では使わないでいただけますと幸いです。</div>
 
       <h3>開発者</h3>
-      <p>Nulpoyo（ぬるぽよ）。会社の同期2人によるインディー開発チームです。日本の会社員2人が、本業のかたわら、二人でゲームを制作しています。</p>
-      <p>《開発者からのひとこと。なぜ作ったか、どこに力を入れたか、どう遊んでほしいか》</p>
+      <p>Nulpoyoは、日本の会社員の同期2人が本業のかたわらゲームを制作するインディーチームです。</p>
+      <p>開発は2人とも仕事が終わってから。気づくと朝5時で、本物のゴルファーが朝イチのティーオフに向けて起き出すころに、私たちの街のゴルフは終わります。</p>
     </div>
 
     <!-- English -->
@@ -263,17 +265,18 @@
         <tr><th>Players</th><td>2–8 (online). Solo play against CPU golfers is also available</td></tr>
         <tr><th>Match rules</th><td>CUP (stroke play), CHECKPOINTS (checkpoint run), TERRITORY (turf war)</td></tr>
         <tr><th>Languages</th><td>English, Japanese</td></tr>
-        <tr><th>Release</th><td>TBA</td></tr>
+        <tr><th>Release</th><td>Late October 2026</td></tr>
         <tr><th>Price</th><td>TBA</td></tr>
         <tr><th>Developer</th><td>Nulpoyo (two-person indie team)</td></tr>
         <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5347600/">store.steampowered.com/app/5347600/</a></td></tr>
+        <tr><th>Trailer</th><td><a href="https://youtu.be/GH-IEbvjQRM">youtu.be/GH-IEbvjQRM</a></td></tr>
       </table>
 
       <div class="note">In running text the title is always <strong>Crazy City Golf</strong>. The all-caps <strong>CRAZY CITY GOLF</strong> belongs to the logo artwork only — please don't set the title in caps in body copy.</div>
 
       <h3>Developer</h3>
-      <p>Nulpoyo is a two-person indie team from Japan: two colleagues who joined the same company in the same year, making games together alongside their full-time office jobs.</p>
-      <p>《A few lines from the developer》</p>
+      <p>Nulpoyo is an indie team of two office workers in Japan — colleagues who joined the same company in the same year — making games alongside their day jobs.</p>
+      <p>We both work on the game only after our day jobs are done. Before we know it, it's 5 a.m.: just as real golfers are getting up for the first tee time of the day, our round of city golf comes to an end.</p>
     </div>
 
   </div>
@@ -507,17 +510,6 @@
       if (p && p.catch) p.catch(function () {});
     }
   }
-
-  // 手元で開いたとき（localhost / file://）だけ、トレーラーを Git 管理外の
-  // assets/video/ から再生する。公開前は Releases 側がまだ空で 404 になるため。
-  // 公開後の GitHub Pages では動かない ── そちらは Releases の mp4 を見る。
-  (function () {
-    var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-                || location.protocol === 'file:';
-    if (!local) return;
-    var v = document.querySelector('#trailer video');
-    if (v) v.src = 'assets/video/CrazyCityGolf_Trailer.mp4';
-  })();
 
   // autoplay が効かない環境（タブが裏にあった、省電力設定など）でも、
   // 画面に入ったループ動画は再生し、外れたら止める。9本を同時に回し続けないためでもある。
