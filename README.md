@@ -237,7 +237,7 @@ ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -crf 24   -maxra
 **トレーラーを作り直すと YouTube の ID は必ず変わる。**`index.html` の `iframe` と YouTube へのリンク（説明文と製品情報、日英）、
 `fact_sheet_*.txt` のトレーラー欄、Releases の mp4 を同時に直す。
 
-埋め込み URL をブラウザで直接開くと「エラー 153」になるが、これは紹介元（Referer）が無いためで、ページに埋め込めば再生される。
+埋め込み URL をブラウザで直接開くと「エラー 153」になる。紹介元（Referer）が無いためなので、再生の確認はページに埋め込んだ状態で、普段のブラウザで行う。
 
 **iframe にもインライン `style` で `display` を書かないこと。** 言語切り替えの
 `display:none` に勝ってしまう。高さは `.trailer-player` の `aspect-ratio: 16 / 9` が
