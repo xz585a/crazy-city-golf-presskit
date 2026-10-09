@@ -8,7 +8,8 @@ Fact sheet
 Title:        Crazy City Golf
 Genre:        Online party action golf
 Platform:     PC (Windows / Steam)
-Players:      1-8 (online; solo play against CPU golfers)
+Players:      2-8 (online). Solo play against CPU golfers is also available
+Match rules:  CUP (stroke play), CHECKPOINTS (checkpoint run), TERRITORY (turf war)
 Languages:    English, Japanese
 Release:      TBA
 Price:        TBA
@@ -24,39 +25,41 @@ Note: in running text the title is always "Crazy City Golf". The all-caps
 About
 ================================================================
 
-Crazy City Golf is an online party golf game for PC where the whole city is the course. You and
-the friends you invite stand in the same city and all play for the same hole at once.
+Crazy City Golf is an online party action golf game set across an entire city. Grind it out along the streets, slip through an alley, or go for one big shot over the rooftops - how you get to the cup is up to you. Items and unexpected accidents can turn a jam into a shortcut.
 
-Take any route you like. Everyone shares the same tee and the same cup, but there is never just
-one way between them. Grind it out down the street, slip through an alley, or hop across the
-rooftops. Rivers and railways are both hazards and shortcuts. Each round generates a whole new
-city, and it stays put for the round - so with every hole you learn a little more about which
-roof gets you there faster.
+■ 20+ items. Your ace in the hole, or a prank on everyone else
+Send your ball through one of the item boxes scattered around town and you get one of over 20 items. Use it on yourself, or on everyone else. Power Up can stretch your own drive - or send every rival flying way past the hole. Rewind can undo your own disaster - or wipe out someone else's perfect shot. The same item plays a different role depending on who you use it on, and when.
 
-The accidents are the best part. Passing cars send your ball flying, oil drums explode, fire
-hydrants blast it skyward. Physics you can't quite control can cost you a stroke - or open a
-shortcut nobody saw coming. There are no turns: up to 8 balls fly through the same city at the
-same time, and every blunder and comeback happens in front of everyone.
+■ Read the city, play your own line
+A new city is generated every round - a slightly odd one, where the Leaning Tower of Pisa, the pyramids and an amusement park all turn up. The city stays the same for the whole round, while the tee and the cup move every hole. And the cup isn't always on the street: it can be inside a building, on a rooftop, on an island out at sea, or on the deck of a moored ship. Look out over rivers and bridges, parks and the high-rise downtown, and pick your own route.
 
-Items rewrite the rules of the shot. Sticky lets you climb a building wall, Ghost passes straight
-through it, Rewind takes a shot back. Use them on yourself, or on everyone else. Some items set
-off events in the city itself: meteors, tornadoes, lightning and UFOs.
+■ The city itself is full of tricks
+Hit a moving car and your ball goes flying. Hit a red oil drum or a tanker truck and it explodes. Hit a fire hydrant and a jet of water shoots up. A blast can ruin your shot - or launch you most of the way there. Whether you use it on purpose or get caught up and laugh about it is part of the fun of every shot.
 
-Playing alone? Fill the round with up to 7 CPU golfers. A hole takes a few minutes; a full round
-runs about 10 to 20.
+■ Play it the way your friends like
+Pick the day's game from three match rules. Items on or off, number of holes, hole length, wind strength and more can all be set in the lobby.
+
+- CUP (stroke play): Simple golf: hole out in as few strokes as you can.
+- CHECKPOINTS (checkpoint run): Visit every checkpoint in town in any order, then head for the cup. The sooner you finish, the more you score.
+- TERRITORY (turf war): Fight over spots around the city. The hole ends the moment anyone holes out; you score for each spot you hold, and whoever sank it gets a bonus. Keep grabbing, or end it first?
+
+■ The best golfer doesn't always get the last laugh
+Every round ends with an awards ceremony. Bonus titles go to whoever tops an unexpected record - most balls out of bounds, most splashdowns, most rooftop landings, and more. Titles come with score bonuses, so the ceremony can flip the standings.
+
+Perfect shots and spectacular disasters alike - every shot is one everyone can laugh about.
 
 ================================================================
 Key features
 ================================================================
 
-- The whole city is the course - A freshly generated city each round. Streets, alleys, rooftops, rivers, railways - go anywhere
-- Up to 8 players, all at once - No waiting for your turn. Everyone plays the same city at the same time
-- The accidents are the fun - Cars, explosions, water jets. City physics wrecks your shot - or hands you a shortcut
-- Items that bend the rules - Climb walls with Sticky, pass through them with Ghost, undo a shot with Rewind. On yourself, or on everyone
-- Disasters in the streets - Meteors, tornadoes, lightning and UFOs. Balls caught out get swept up
-- Weather that matters - Sun, rain, snow and storms change how the ball runs after it lands
-- Comebacks to the very end - Bonus titles are drawn at the end of each round, and the record holder gets strokes back
-- With friends or on your own - Steam friend invites and public lobbies, or play solo against CPU golfers
+- The whole city is the course - A new city every round, with the Leaning Tower of Pisa, pyramids and an amusement park mixed in. Go any way you like
+- 2 to 8 friends at once - No waiting for your turn. Great shots and disasters happen all over town at the same time
+- 20+ items - Use them on yourself or on everyone else - an ace in the hole or a prank
+- Cups in unexpected places - Inside buildings, on rooftops, on an island at sea, even on the deck of a moored ship
+- A city full of tricks - Moving cars, exploding oil drums and tanker trucks, fire hydrant jets. Disaster or shortcut
+- Three match rules - CUP (stroke play), CHECKPOINTS (checkpoint run), TERRITORY (turf war)
+- Set it up your way - Items on or off, number of holes, hole length, wind strength
+- Comebacks at the awards - Bonus titles for unexpected records, with score bonuses attached
 
 ================================================================
 Developer
