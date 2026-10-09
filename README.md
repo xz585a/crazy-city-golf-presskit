@@ -104,14 +104,16 @@ python -m http.server 8765
 
 ## 現在の収録物
 
-- スクリーンショット **9枚**（**800×450 の JPEG。原寸ではない**。下記「スクリーンショットの差し替え待ち」）
-- GIF **9点**（616×346）と、同じ場面のループ動画（mp4、無音）9点
-  - ページ上は mp4 を再生し、GIF はダウンロード用。GIF を9本並べるとページが50MB近くになるため
+- スクリーンショット **16枚**。`16_night_fireworks.png` だけが原寸（1920×1080 PNG）で、**ほか15枚は 800×450 の JPEG（原寸ではない）**。下記「スクリーンショットの差し替え待ち」
+- GIF **11点**（616×346）と、同じ場面のループ動画（mp4、無音）11点
+  - ページ上は mp4 を再生し、GIF はダウンロード用。GIF を並べるとページが数十MBになるため
+  - `10_bend_the_rules` と `11_pick_your_chaos` は英語テロップ入り
+- 動画 **1点**：`12_big_ball_split.mp4`（1920×1080、8秒、音声あり。GIF は無い）。ページ上は 960 幅・無音の `loop_12_big_ball_split.mp4` を再生する
   - 画面に入ったものだけ再生し、外れたら止める（`index.html` 末尾のスクリプト）
 - ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
 - ファクトシート 日英
 - トレーラー（約100秒、29MB に再圧縮した mp4）
-- 一括ダウンロード用 zip（67MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（120MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
 
@@ -126,8 +128,12 @@ python -m http.server 8765
 
 | ここ | ゲーム本体側の素材ID・元のファイル |
 | --- | --- |
-| `assets/gifs/01_meteor_start.gif` 〜 `09_awards.gif` | GIF 一式 `01_同時スタートに隕石_none_16x9_v01.gif` 〜 `09_表彰式_none_16x9_v01.gif`（番号は同じ） |
-| `assets/images/01_sticky_wall.jpg` 〜 `09_beach_putt.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450）で保存したもの。対応は下表 |
+| `assets/gifs/01_meteor_start.gif` 〜 `09_awards.gif` | GIF 一式 `01_同時スタートに隕石_none_16x9_v01.gif` 〜 `09_表彰式_none_16x9_v01.gif`（番号は同じ）。`02_landmarks.gif` だけは 2026-10-10 に `02_名所_none_16x9_v02.gif` へ差し替えた |
+| `assets/gifs/10_bend_the_rules.gif` | `02_物理を曲げる_en_16x9_v01.gif`（2026-10-10 追加） |
+| `assets/gifs/11_pick_your_chaos.gif` | `05_選りすぐり8種_en_16x9_v01.gif`（2026-10-10 追加） |
+| `assets/gifs/12_big_ball_split.mp4` | `10_ビッグボール＋スプリット.mp4`（2026-10-10 追加。そのまま） |
+| `assets/images/01_sticky_wall.jpg` 〜 `15_split_shot.jpg` | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450〜451）で保存したもの。対応は下表。10〜15 は 2026-10-10 追加 |
+| `assets/images/16_night_fireworks.png` | `夜空の8球_花火_en_16x9_v02.png`（原寸。2026-10-10 追加） |
 | `assets/gifs/loop_*.mp4` | 上の GIF を ffmpeg で mp4 にしたもの（下記） |
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
@@ -145,10 +151,16 @@ python -m http.server 8765
 | `07_night_harbor.jpg` | `ss_a248e2dd70d22e235b64c7694183e3567d4cd7cb.800x600.jpg` |
 | `08_storm_lightning.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.800x600.jpg` |
 | `09_beach_putt.jpg` | `ss_83be64ced3885aaf984fd6e9b1951a0676eda431.800x600.jpg` |
+| `10_sticky_wall_aim.jpg` | `ss_3af6ade5451d54e096e6daff64759e943af08a6f.800x600.jpg` |
+| `11_bomb_car.jpg` | `ss_6985bd533e64c26f448a9e9716671d03bca22eeb.800x600.jpg` |
+| `12_big_ball_street.jpg` | `ss_6a1e23f0b30a9d997901584e2ce777155daf96b9.800x600.jpg` |
+| `13_hole_recap_night.jpg` | `ss_88ea33ee151669d01ae647693e14a52a5af568a7.800x600.jpg` |
+| `14_side_gravity_big_ball.jpg` | `ss_c32abca88adf32e526711833c5d03bb98aa15a0e.800x600.jpg` |
+| `15_split_shot.jpg` | `ss_ca219763aad24a50a3a0812c2e3b58f3993af258.800x600.jpg` |
 
 ### スクリーンショットの差し替え待ち
 
-いまの9枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
+`.jpg` の15枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
 編集部は記事用に切り出して拡大するので、原寸（1920×1080 の PNG。Steamworks へ上げた元ファイル）が見つかったら差し替える。
 
 1. `assets/images/` へ同じ番号・名前の `.png` で置き、`.jpg` を消す
@@ -156,7 +168,7 @@ python -m http.server 8765
 3. `index.html` のスクリーンショットの `href` と `src` を `.png` に直し、説明文の「800×450」と原寸を送る旨の文を消す
 4. `python build_zip.py` で zip を作り直して Releases へ上げる
 
-GIF から mp4 を作り直すとき。
+GIF から mp4 を作り直すとき（`12_big_ball_split` は元が mp4 なので `-vf scale=960:-2 -crf 23 -an` で縮める）。
 
 ```bash
 ffmpeg -i assets/gifs/01_meteor_start.gif -movflags +faststart -pix_fmt yuv420p \
