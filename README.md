@@ -15,7 +15,7 @@
 
 - **内容は一旦完成。未公開。**このフォルダ（`C:\Godot\crazy-city-golf-presskit`）にだけあり、GitHub にはまだ無い
 - 公開するときは下の「公開の手順（初回）」を上から行う
-- 残っているもの：価格（いまは「未定」）、スクリーンショットの原寸（07 以外）
+- 残っているもの：価格（いまは「未定」）
 - 発売時期は「2026年10月下旬」、トレーラーは YouTube（<https://youtu.be/GH-IEbvjQRM>）を埋め込んでいる
 
 **GitHub へ上げるまで、ここが唯一のコピーである。**PC の移行や掃除の前に公開するか、別の場所へ複製する。
@@ -52,7 +52,7 @@ python -m http.server 8765
 | 発売時期・価格を入れる | `index.html` の製品情報の表（日英）、両ファクトシートの製品情報 |
 | 開発者名義・メールを変える | 製品情報、連絡先、フッター（`© Nulpoyo`）、両ファクトシート |
 | トレーラーを YouTube へ切り替える | 下の「トレーラー」。ファクトシートのトレーラー欄も |
-| スクリーンショットを原寸へ差し替える | 下の「スクリーンショットの差し替え待ち」 |
+| スクリーンショットを差し替える | `assets/images/` に同じ名前で置き直し、`python build_thumbs.py` |
 | スクリーンショット・GIF を足す | 下の「素材を追加したときの手順」 |
 | 説明文・キャプションの言い回し | 日英の対（`l-ja` / `l-en`）を両方直す |
 
@@ -105,7 +105,7 @@ python -m http.server 8765
 
 ## 現在の収録物
 
-- スクリーンショット **9枚**（Steam ストアページと同じ。2026-10-10 に入れ替え）。`07_night_fireworks.png` だけが原寸（1920×1080 PNG）で、**ほか8枚は 800×450 の JPEG（原寸ではない）**。下記「スクリーンショットの差し替え待ち」
+- スクリーンショット **9枚**（Steam ストアページと同じ。2026-10-10 に入れ替え）。すべて原寸（1918〜1920×1080）。`07_night_fireworks.png` は元の PNG、ほか8枚は Steam に上げた原寸の JPEG
 - GIF **11点**（616×346）と、同じ場面のループ動画（mp4、無音）11点
   - ページ上は mp4 を再生し、GIF はダウンロード用。GIF を並べるとページが数十MBになるため
   - `10_bend_the_rules` と `11_pick_your_chaos` は英語テロップ入り
@@ -114,13 +114,12 @@ python -m http.server 8765
 - ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
 - ファクトシート 日英
 - トレーラー（約100秒、29MB に再圧縮した mp4）
-- 一括ダウンロード用 zip（119MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（123MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
 
 | 何 | 備考 |
 | --- | --- |
-| スクリーンショットの原寸 | 下記「スクリーンショットの差し替え待ち」 |
 | 価格 | いまは「未定」。`index.html` の製品情報（日英）と両ファクトシート |
 
 ## 素材の出どころ
@@ -131,7 +130,7 @@ python -m http.server 8765
 | `assets/gifs/10_bend_the_rules.gif` | `02_物理を曲げる_en_16x9_v01.gif`（2026-10-10 追加） |
 | `assets/gifs/11_pick_your_chaos.gif` | `05_選りすぐり8種_en_16x9_v01.gif`（2026-10-10 追加） |
 | `assets/gifs/12_big_ball_split.mp4` | `10_ビッグボール＋スプリット.mp4`（2026-10-10 追加。そのまま） |
-| `assets/images/*.jpg`（8枚） | Steam ストアページに載せたスクリーンショットを、ストアの表示サイズ（`ss_<hash>.800x600.jpg`、実寸 800×450〜451）で保存したもの。対応は下表 |
+| `assets/images/*.jpg`（8枚） | Steam ストアページに載せたスクリーンショットの原寸（`ss_<hash>.1920x1080.jpg`）。対応は下表 |
 | `assets/images/07_night_fireworks.png` | `夜空の8球_花火_en_16x9_v02.png`（原寸） |
 | `assets/gifs/loop_*.mp4` | 上の GIF を ffmpeg で mp4 にしたもの（下記） |
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
@@ -141,27 +140,19 @@ python -m http.server 8765
 
 | ここ | 受け取ったファイル |
 | --- | --- |
-| `01_sticky_wall_aim.jpg` | `ss_3af6ade5451d54e096e6daff64759e943af08a6f.800x600.jpg` |
-| `02_bomb_car.jpg` | `ss_6985bd533e64c26f448a9e9716671d03bca22eeb.800x600.jpg` |
-| `03_big_ball_street.jpg` | `ss_6a1e23f0b30a9d997901584e2ce777155daf96b9.800x600.jpg` |
-| `04_side_gravity_big_ball.jpg` | `ss_c32abca88adf32e526711833c5d03bb98aa15a0e.800x600.jpg` |
-| `05_split_shot.jpg` | `ss_ca219763aad24a50a3a0812c2e3b58f3993af258.800x600.jpg` |
-| `06_hole_recap_night.jpg` | `ss_88ea33ee151669d01ae647693e14a52a5af568a7.800x600.jpg` |
-| `08_storm_lightning.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.800x600.jpg` |
-| `09_beach_putt.jpg` | `ss_83be64ced3885aaf984fd6e9b1951a0676eda431.800x600.jpg` |
+| `01_sticky_wall_aim.jpg` | `ss_3af6ade5451d54e096e6daff64759e943af08a6f.1920x1080.jpg` |
+| `02_bomb_car.jpg` | `ss_6985bd533e64c26f448a9e9716671d03bca22eeb.1920x1080.jpg` |
+| `03_big_ball_street.jpg` | `ss_6a1e23f0b30a9d997901584e2ce777155daf96b9.1920x1080.jpg` |
+| `04_side_gravity_big_ball.jpg` | `ss_c32abca88adf32e526711833c5d03bb98aa15a0e.1920x1080.jpg` |
+| `05_split_shot.jpg` | `ss_ca219763aad24a50a3a0812c2e3b58f3993af258.1920x1080.jpg` |
+| `06_hole_recap_night.jpg` | `ss_88ea33ee151669d01ae647693e14a52a5af568a7.1920x1080.jpg` |
+| `08_storm_lightning.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.1920x1080.jpg` |
+| `09_beach_putt.jpg` | `ss_de797a15571aecf855c8d37cee6e82fbb7a0cf46.800x600.jpg`（名前は 08 と同じハッシュだが、中身は浜辺のパットの原寸 1920×1080） |
 
 2026-10-10 に、Steam ストアページから外した7枚（屋上・島・横向き重力・スーパーボール・BIGボール・遊園地・夜の港）を
 プレスキットからも外し、残りを 01〜09 に振り直した（未公開だったので公開URLへの影響は無い）。
 
-### スクリーンショットの差し替え待ち
-
-`.jpg` の8枚は、Steam が配信用に縮めた 800×450 の JPEG である。**配布物としては小さく、圧縮の滲みもある。**
-編集部は記事用に切り出して拡大するので、原寸（1920×1080 の PNG。Steamworks へ上げた元ファイル）が見つかったら差し替える。
-
-1. `assets/images/` へ同じ番号・名前の `.png` で置き、`.jpg` を消す
-2. `python build_thumbs.py`
-3. `index.html` のスクリーンショットの `href` と `src` を `.png` に直し、説明文の「800×450」と原寸を送る旨の文を消す
-4. `python build_zip.py` で zip を作り直して Releases へ上げる
+スクリーンショットは 2026-10-10 に原寸へ差し替えた（それまでは Steam の表示用に縮んだ 800×450 を置いていた）。
 
 GIF から mp4 を作り直すとき（`12_big_ball_split` は元が mp4 なので `-vf scale=960:-2 -crf 23 -an` で縮める）。
 
