@@ -114,7 +114,7 @@ python -m http.server 8765
   - 画面に入ったものだけ再生し、外れたら止める（`index.html` 末尾のスクリプト）
 - ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
 - ファクトシート 日英
-- トレーラー（約100秒、29MB に再圧縮した mp4）
+- トレーラー（約100秒）の mp4 を2本：高画質版（154MB、約12Mbps）と、軽量版（29MB、約2.2Mbps）
 - 一括ダウンロード用 zip（123MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
@@ -137,7 +137,7 @@ python -m http.server 8765
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
 | `assets/branding/app_icon.svg` | `20261002_アプリアイコン/app_icon.svg` |
-| `assets/video/CrazyCityGolf_Trailer.mp4` | `20261001_steam_promo_90s` の `steam_promo_en_16x9_v20.mp4` |
+| `assets/video/CrazyCityGolf_Trailer.mp4`・`CrazyCityGolf_Trailer_1080p.mp4` | `20261001_steam_promo_90s` の `steam_promo_en_16x9_v20.mp4` |
 
 | ここ | 受け取ったファイル |
 | --- | --- |
@@ -170,10 +170,11 @@ ffmpeg -i assets/gifs/01_meteor_start.gif -movflags +faststart -pix_fmt yuv420p 
 
 ```text
 https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_PressKit.zip
+https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer_1080p.mp4
 https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/CrazyCityGolf_Trailer.mp4
 ```
 
-理由は、**この2つだけが繰り返し差し替わるうえに大きい**こと。Git はバイナリの差分を
+理由は、**これらだけが繰り返し差し替わるうえに大きい**こと。Git はバイナリの差分を
 持てないので、作り直すたびに丸ごと履歴へ積み上がり、あとから減らせない。
 
 更新は**同じファイル名で上書き**する。URL が変わらない。
@@ -182,7 +183,7 @@ https://github.com/xz585a/crazy-city-golf-presskit/releases/download/assets/Craz
 gh release upload assets downloads/CrazyCityGolf_PressKit.zip --clobber
 ```
 
-**公開前に、この2つを Releases へ上げておくこと。**ページ上のトレーラーと
+**公開前に、これらを Releases へ上げておくこと。**ページ上のトレーラーと
 一括ダウンロードのリンク先がこの URL なので、上げるまでは 404 になる。
 
 ページ上のトレーラーは YouTube の埋め込みなので、Releases が空でも見え方は確認できる。
@@ -220,14 +221,29 @@ python build_thumbs.py
 ページでは YouTube を埋め込んでいる（<https://youtu.be/GH-IEbvjQRM>、約100秒、公式チャンネル Nulpoyo）。
 `#trailer` の `iframe` は `youtube-nocookie.com/embed/GH-IEbvjQRM`。製品情報の表とファクトシートにも URL を書いてある。
 
-ダウンロード用の mp4 は Releases に置く（編集部が使う）。元素材（約100秒、498MB）を ffmpeg で 29MB へ再圧縮したもの。
+ダウンロード用の mp4 は Releases に2本置き、ページでは高画質版を先に並べる（編集部が使う）。
+どちらも元素材（約100秒、約40Mbps・475MB）を ffmpeg で再圧縮したもの。
+
+| ファイル | 容量・ビットレート | 用途 |
+| --- | --- | --- |
+| `CrazyCityGolf_Trailer_1080p.mp4` | 154MB、約12Mbps | 高画質版。記事への埋め込み・YouTube チャンネルの再アップロードなど、相手に渡すのはこちら |
+| `CrazyCityGolf_Trailer.mp4` | 29MB、約2.2Mbps | 軽量版。回線が細い相手向け |
+
+**軽量版だけを渡さない。**動きの多いゲーム映像なので、2.2Mbps では芝などの細部がつぶれる。
+2026-10-23 に元素材と比べたところ、SSIM は高画質版 0.969、軽量版 0.906 で、軽量版は見て分かるほど粗かった。
+以前はページに軽量版しか置いていなかった。
 
 ```bash
+# 高画質版
+ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -b:v 12M -maxrate 16M -bufsize 24M -pix_fmt yuv420p -c:a aac -b:a 256k -movflags +faststart assets/video/CrazyCityGolf_Trailer_1080p.mp4
+# 軽量版
 ffmpeg -i steam_promo_en_16x9_v20.mp4 -c:v libx264 -preset slow -crf 24   -maxrate 2200k -bufsize 4400k -pix_fmt yuv420p -movflags +faststart   -c:a aac -b:a 128k assets/video/CrazyCityGolf_Trailer.mp4
 ```
 
+`-crf 18` だと 375MB になり、渡すには大きすぎた。
+
 **トレーラーを作り直すと YouTube の ID は必ず変わる。**`index.html` の `iframe` と YouTube へのリンク（説明文と製品情報、日英）、
-`fact_sheet_*.txt` のトレーラー欄、Releases の mp4 を同時に直す。
+`fact_sheet_*.txt` のトレーラー欄、Releases の mp4（2本とも）を同時に直す。
 
 埋め込み URL をブラウザで直接開くと「エラー 153」になる。紹介元（Referer）が無いためなので、再生の確認はページに埋め込んだ状態で、普段のブラウザで行う。
 
