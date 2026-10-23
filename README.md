@@ -112,10 +112,10 @@ python -m http.server 8765
   - `10_bend_the_rules` と `11_pick_your_chaos` は英語テロップ入り
 - 動画 **1点**：`12_big_ball_split.mp4`（1920×1080、8秒、音声あり。GIF は無い）。ページ上は 960 幅・無音の `loop_12_big_ball_split.mp4` を再生する
   - 画面に入ったものだけ再生し、外れたら止める（`index.html` 末尾のスクリプト）
-- ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像の計10点（`assets/branding/`）
+- ロゴ（透過 PNG）、キーアート（ロゴあり・なし）、Steam のカプセル・ライブラリ画像、YouTube トレーラーのサムネイルの計11点（`assets/branding/`）
 - ファクトシート 日英
 - トレーラー（約100秒）の mp4 を2本：高画質版（154MB、約12Mbps）と、軽量版（29MB、約2.2Mbps）
-- 一括ダウンロード用 zip（123MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（124MB。トレーラーは容量の都合で含めない）
 
 ### 未収録（決まり次第、足す）
 
@@ -137,6 +137,7 @@ python -m http.server 8765
 | `assets/branding/capsule_*`・`keyart_nologo_*` | `20261004_Steamストアカプセル` の `01_heli_hit`（`_logo_` 付きがカプセル、無しがキーアート） |
 | `assets/branding/capsule_library_600x900.png`・`library_header_920x430.png`・`hero_3840x1240.png`・`logo_1280x563.png` | `20261002_Steamライブラリ` の採用版 |
 | `assets/branding/app_icon.svg` | `20261002_アプリアイコン/app_icon.svg` |
+| `assets/branding/youtube_thumbnail_1280x720.png` | `20261010_YouTubeトレーラー/採用/youtube_thumb_en_16x9_v01.png` |
 | `assets/video/CrazyCityGolf_Trailer.mp4`・`CrazyCityGolf_Trailer_1080p.mp4` | `20261001_steam_promo_90s` の `steam_promo_en_16x9_v20.mp4` |
 
 | ここ | 受け取ったファイル |
